@@ -1,5 +1,5 @@
-#ifndef CINEMA_H
-#define CINEMA_H
+#ifndef cinema_h
+#define cinema_h
 
 #include <iostream>
 
@@ -20,6 +20,8 @@ public:
     void visualizar(int salaSelecionada);
     void reservar(int salaSelecionada, char linhaSelecionada, int poltrona);
     bool checarLotacao(int salaSelecionada);
+
+    void exLotacaoMax();
 };
 
 #endif

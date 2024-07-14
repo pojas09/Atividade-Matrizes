@@ -6,13 +6,8 @@ int main() {
 
     bool retornar;
 
-    for (int i = 0; i < numSalas; i++) {
-        for (int j = 0; j < linhas; j++) {
-            for (int k = 0; k < colunas; k++) {
-                meuCinema.reservar(i, 'A' + j, k + 1);
-            }
-        }
-    } // Para verificar como a matriz se comporta quando cheia
+    meuCinema.exLotacaoMax();
+
 
     do {
         retornar = true;

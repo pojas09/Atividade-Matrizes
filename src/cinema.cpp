@@ -35,14 +35,14 @@ void Cinema::visualizar(int salaSelecionada) {
         cout << " [ " << i << " ] ";
     }
     cout << endl;
-    cout << endl << "X = Poltrona Reservada" << endl;  // Espécie de "Legenda"
+    cout << endl << "X = Poltrona Reservada" << endl;  // Espï¿½cie de "Legenda"
     cout << "O = Poltrona Livre" << endl;
 }
 
 void Cinema::reservar(int salaSelecionada, char linhaSelecionada, int poltrona) {
-    linhaSelecionada = toupper(linhaSelecionada); // Transformar o char em maiúsculo
-    int linha = linhaSelecionada - 'A'; /// A = 65 B = 66 ... B - A = 1 -> aponta para o índice 1 | A - A = 0 -> aponta para o índice 0
-    poltrona = poltrona - 1;   // A poltrona tem que ser decrescida um número para que o índice seja adequado
+    linhaSelecionada = toupper(linhaSelecionada); // Transformar o char em maiï¿½sculo
+    int linha = linhaSelecionada - 'A'; /// A = 65 B = 66 ... B - A = 1 -> aponta para o ï¿½ndice 1 | A - A = 0 -> aponta para o ï¿½ndice 0
+    poltrona = poltrona - 1;   // A poltrona tem que ser decrescida um nï¿½mero para que o ï¿½ndice seja adequado
 
     if (linha >= 0 && linha < linhas && poltrona >= 0 && poltrona < colunas) {
         if (!salas[salaSelecionada][linha][poltrona]) {
@@ -54,7 +54,7 @@ void Cinema::reservar(int salaSelecionada, char linhaSelecionada, int poltrona) 
         }
     }
     else {
-        cout << endl << "Reserva cancelada, informações invalidas" << endl;
+        cout << endl << "Reserva cancelada, informaï¿½ï¿½es invalidas" << endl;
     }
 }
 
@@ -62,10 +62,19 @@ bool Cinema::checarLotacao(int salaSelecionada) {
     for (int i = 0; i < linhas; i++) {
         for (int j = 0; j < colunas; j++) {
             if (!salas[salaSelecionada][i][j])
-                return false;  // Verifica se há algum valor falso na matriz ou seja, livre
+                return false;  // Verifica se hï¿½ algum valor falso na matriz ou seja, livre
         }
     }
     return true;
 }
 
+void Cinema::exLotacaoMax() {
+        for (int i = 0; i < numSalas; i++) {
+        for (int j = 0; j < linhas; j++) {
+            for (int k = 0; k < colunas; k++) {
+                reservar(i, 'A' + j, k + 1);
+            }
+        }
+    } // Para verificar como a matriz se comporta quando cheia
+}
 
