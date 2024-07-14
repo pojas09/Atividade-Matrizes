@@ -1,4 +1,5 @@
 #include "cinema.h"
+#include <Windows.h>
 
 Cinema meuCinema;
 
@@ -6,8 +7,8 @@ int main() {
 
     bool retornar;
 
-    meuCinema.exLotacaoMax();
-
+    SetConsoleOutputCP(CP_UTF8);
+    // meuCinema.exLotacaoMax();
 
     do {
         retornar = true;
@@ -17,7 +18,7 @@ int main() {
         }
         cout << "(0) Sair" << endl;
 
-        cout << endl << "Escolha uma sala para visualiza-la: " << endl; // Escolha de salas
+        cout << endl << "Escolha uma sala para visualizá-la: " << endl; // Escolha de salas
         int opcaoSala;
         cin >> opcaoSala;
         opcaoSala = opcaoSala - 1;
@@ -51,7 +52,7 @@ int main() {
                         }
                     }
                     if (!salaLivre)
-                        cout << endl << "Todas as salas estao lotadas!" << endl;
+                        cout << endl << "Todas as salas estão lotadas!" << endl;
                 }
                 break;
 
@@ -59,7 +60,7 @@ int main() {
                 break;
 
             default:
-                cout << endl << "Opção invalida" << endl;
+                cout << endl << "Opção inválida" << endl;
                 break;
             }
         }

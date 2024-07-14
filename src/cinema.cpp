@@ -35,14 +35,14 @@ void Cinema::visualizar(int salaSelecionada) {
         cout << " [ " << i << " ] ";
     }
     cout << endl;
-    cout << endl << "X = Poltrona Reservada" << endl;  // Esp�cie de "Legenda"
+    cout << endl << "X = Poltrona Reservada" << endl;  // Especie de "Legenda"
     cout << "O = Poltrona Livre" << endl;
 }
 
 void Cinema::reservar(int salaSelecionada, char linhaSelecionada, int poltrona) {
-    linhaSelecionada = toupper(linhaSelecionada); // Transformar o char em mai�sculo
-    int linha = linhaSelecionada - 'A'; /// A = 65 B = 66 ... B - A = 1 -> aponta para o �ndice 1 | A - A = 0 -> aponta para o �ndice 0
-    poltrona = poltrona - 1;   // A poltrona tem que ser decrescida um n�mero para que o �ndice seja adequado
+    linhaSelecionada = toupper(linhaSelecionada); // Transformar o char em maiusculo
+    int linha = linhaSelecionada - 'A'; /// A = 65 B = 66 ... B - A = 1 -> aponta para o Indice 1 | A - A = 0 -> aponta para o Indice 0
+    poltrona = poltrona - 1;   // A poltrona tem que ser decrescida um numero para que o Indice seja adequado
 
     if (linha >= 0 && linha < linhas && poltrona >= 0 && poltrona < colunas) {
         if (!salas[salaSelecionada][linha][poltrona]) {
@@ -50,11 +50,11 @@ void Cinema::reservar(int salaSelecionada, char linhaSelecionada, int poltrona) 
             cout << endl << "Reserva realizada com sucesso!" << endl;
         }
         else {
-            cout << endl << "Este assento ja esta reservado" << endl;
+            cout << endl << "Este assento já está reservado." << endl;
         }
     }
     else {
-        cout << endl << "Reserva cancelada, informa��es invalidas" << endl;
+        cout << endl << "Reserva cancelada, informações inválidas." << endl;
     }
 }
 
@@ -62,7 +62,7 @@ bool Cinema::checarLotacao(int salaSelecionada) {
     for (int i = 0; i < linhas; i++) {
         for (int j = 0; j < colunas; j++) {
             if (!salas[salaSelecionada][i][j])
-                return false;  // Verifica se h� algum valor falso na matriz ou seja, livre
+                return false;  // Verifica se ha algum valor falso na matriz ou seja, livre
         }
     }
     return true;
